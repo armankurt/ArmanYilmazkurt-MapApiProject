@@ -1,0 +1,209 @@
+#fullscreenContainer {
+    position: relative;
+    height: 100vh; /* Tam ekran yükseklik */
+}
+
+.map {
+    height: 100%;
+    width: 100%; 
+}
+
+.marker {
+    background-image: url('https://openlayers.org/en/latest/examples/data/icon.png');
+    background-size: cover;
+    width: 32px;
+    height: 48px;
+    cursor: pointer;
+}
+
+/* Buton Stili */
+button {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; /* Metin hizalaması */
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; /* Font boyutu */
+    margin: 4px 2px;
+    cursor: pointer; 
+    border: none; 
+    border-radius: 4px; /* Kenarlık yuvarlaklığı */
+    box-shadow: 0 4px #999; /* Gölgelendirme */
+}
+
+button:hover {
+    background-color: #45a049; 
+}
+
+/* Butona basıldığında */
+button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666; /* Gölgelendirme */
+    transform: translateY(2px); 
+}
+
+.button-container {
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    right: 0; 
+    transition: top 1s; /* Yavaş geçiş efekti */
+    display: flex; 
+    justify-content: center; /* Yatayda merkezleme */
+    align-items: center; /* Dikeyde merkezleme */
+    background-color: rgba(171, 228, 255, 0.5); 
+    padding: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    z-index: 1000; 
+}
+
+.button-container.closed {
+    top: -100%; /* Gizlendiğinde pozisyon */
+}
+
+.button-container.slow {
+    transition: top 3s; /* Çıkarken yavaş animasyon */
+}
+
+.material-icons {
+    font-size: 24px; 
+}
+#toggleIcon {
+    position: absolute;
+    top: 100px; 
+    margin-top: 80px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1000; 
+}
+
+/* Diğer Özellikler Butonu Stili */
+.dropbtn {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 11px 20px; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex; /* Flexbox ile hizalama */
+    justify-content: center; 
+    align-items: center; /* Dikey hizalama */
+}
+
+.dropbtn i { /* İkon için stil */
+    font-size: 20px; 
+    margin-left: 8px;
+}
+
+/* Dropdown menüsü */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    left: 200px; 
+}
+
+
+/* Dropdown içeriği */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    overflow: hidden;
+    opacity: 0; 
+    transition: opacity 0.5s; /* Yavaş geçiş efekti */
+}
+
+/* Dropdown linkleri */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.5s;
+}
+
+.dropdown-content a:hover {background-color: #dadada}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+    transition: opacity 2s;
+}
+
+.ol-popup {
+    position: absolute;
+    background-color: rgba(206, 239, 255, 0.9); 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); 
+    padding: 10px; 
+    border-radius: 8px; /* Yumuşatılmış köşeler */
+    border: 1px solid #ccc; 
+    bottom: 30px;
+    left: -50%;
+    min-width: 160px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.1;
+    color: #333;
+    font-size: 14px;
+    text-align: center; 
+    font-weight:500;
+}
+
+
+.ol-popup:before, .ol-popup:after {
+    top: 100%;
+    border: solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.ol-popup:before {
+    border-top-color: #ccc;
+    border-width: 12px;
+    left: 50%;
+    margin-left: -12px;
+}
+
+.ol-popup:after {
+    border-top-color: rgba(206, 239, 255, 0.9);
+    border-width: 10px;
+    left: 50%;
+    margin-left: -10px;
+}
+
+.ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.ol-popup-closer:hover svg {
+    stroke: #666; 
+}
+
+.ol-popup-closer svg {
+    stroke: #333; 
+}
+
+
+.ol-popup p {
+    margin-top: 3px; 
+    margin-bottom: 7px; 
+}
+
+
+
